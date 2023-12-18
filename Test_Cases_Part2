@@ -1,0 +1,50 @@
+# Scenario 1: Search Results Pagination
+
+Scenario description: Testing pagination is crucial to ensure that the API handles large result sets gracefully and that the pagination information is correctly provided for clients to navigate through the results.
+
+* Given: A client of the API
+* When: A search for pages containing 'furry rabbits' is executed with a page limit set to 5
+* Then: The API should return a paginated response with a maximum of 5 results per page. Verify that the pagination information is correctly structured, including the presence of next and previous links.
+
+
+Scenario 2: Empty Search Results
+
+Scenario Description: Verifying the API's behavior when no results are found is important to ensure that it handles such cases appropriately and communicates this information clearly to the client.
+
+* Given: A client of the API
+* When: A search for pages containing a non-existent term, e.g., 'xylophone123'
+* Then: The API should return an empty result set with proper indication that no matching pages were found.
+
+
+Scenario 3: Invalid Search Term
+
+Scenario Description: It's essential to test how the API handles invalid input to ensure that it provides informative error messages, helping developers understand and address the issue.
+
+* Given: A client of the API
+* When: A search is executed with an invalid or unsupported search term, e.g., special characters or an empty string
+* Then: The API should return an error response with a meaningful error message indicating the issue.
+
+Scenario 4: Special Characters in Search Term
+
+Scenario Description: Testing with special characters helps ensure that the API handles them correctly, avoiding potential issues with URL encoding and search term interpretation.
+
+* Given: A client of the API
+* When: A search for pages containing a search term with special characters, e.g., 'c++ programming'
+* Then: The API should correctly handle and interpret special characters, returning relevant results without errors.
+
+
+Scenario 5: Search Term with Multiple Words
+
+Scenario Description: Testing multi-word search terms ensures that the API correctly interprets and processes queries with spaces, delivering accurate and relevant results.
+
+* Given: A client of the API
+* When: A search for pages containing a multi-word search term, e.g., 'red roses'
+* Then: The API should return results that match the entire phrase, and the relevance of results should be based on the complete term.
+
+Scenario 6: Search Result Sorting
+
+Scenario Description: Testing sorting functionality ensures that the API correctly orders search results based on the specified criteria, providing users with flexibility in result presentation.
+
+* Given: A client of the API
+* When: A search for pages containing 'furry rabbits' is executed with a specified sorting order (e.g., by relevance, date, or title)
+* Then: The API should return results in the specified order, and the order should match the expected sorting criteria.
